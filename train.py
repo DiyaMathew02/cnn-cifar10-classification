@@ -37,3 +37,27 @@ model.fit(x_train, y_train, epochs=10, validation_split=0.1)
 
 # Save model
 model.save("cifar10_cnn.h5")
+
+# Visualization
+import matplotlib.pyplot as plt
+
+plt.figure()
+plt.plot(history.history['accuracy'], label='Training Accuracy')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.title('Model Accuracy')
+plt.savefig('accuracy.png')
+plt.show()
+
+plt.figure()
+plt.plot(history.history['loss'], label='Training Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.title('Model Loss')
+plt.savefig('loss.png')
+plt.show()
+
