@@ -1,89 +1,109 @@
-# CNN CIFAR-10 Image Classification
+# CNN Image Classification using CIFAR-10
 
 ## Project Overview
-This project implements a **Convolutional Neural Network (CNN)** for image classification using the **CIFAR-10 dataset**.  
-The goal of this project is to design, train, and evaluate a CNN model that can correctly classify images into one of 10 predefined categories.
 
-A **Streamlit web application** is also developed as part of this project, allowing users to upload an image and view the model’s prediction.
+This project focuses on designing and implementing a **Convolutional Neural Network (CNN)** for **image classification** using the **CIFAR-10 dataset**. The objective is to classify input images into one of ten predefined categories such as airplanes, automobiles, birds, cats, deer, dogs, frogs, horses, ships, and trucks.
 
-## Dataset Used
-- **CIFAR-10 Dataset**
-- Total images: 60,000
-- Image size: 32 × 32 (RGB)
-- Number of classes: 10
+The project demonstrates the complete machine learning workflow including data preprocessing, CNN model construction, training, evaluation, visualization of results, and deployment through a simple user interface.
 
-### CIFAR-10 Classes
-- Airplane  
-- Automobile  
-- Bird  
-- Cat  
-- Deer  
-- Dog  
-- Frog  
-- Horse  
-- Ship  
-- Truck  
+## Dataset
 
-## CNN Concepts Covered
-- Convolutional layers for feature extraction
-- Max pooling for dimensionality reduction
-- ReLU activation function
-- Fully connected (Dense) layers
-- Softmax output layer for multi-class classification
-- Adam optimizer
-- Categorical Cross-Entropy loss function
+**CIFAR-10 Dataset**
+
+* 60,000 RGB images (32 × 32 pixels)
+* 10 image classes
+* 50,000 training images
+* 10,000 testing images
+
+The dataset is loaded using `tensorflow.keras.datasets`.
 
 ## Project Structure
+
 ```
 cnn-cifar10-classification/
 │
-├── preprocess.py    # Loads and preprocesses CIFAR-10 dataset
-├── train.py         # Builds and trains the CNN model
-├── evaluate.py      # Evaluates trained model performance
-├── app.py           # Streamlit web application for prediction
-├── requirements.txt # List of required Python libraries
-├── README.md        # Project documentation
+├── app.py               # Streamlit app for image prediction
+├── train.py             # Model training and visualization
+├── evaluate.py          # Model evaluation
+├── preprocess.py        # Dataset preprocessing
+├── cifar10_cnn.h5       # Saved trained CNN model
+├── accuracy.png         # Accuracy graph
+├── loss.png             # Loss graph
+├── requirements.txt     # Required Python packages
+├── README.md            # Project documentation
+└── .gitignore
 ```
 
-## Requirements
-The following Python libraries are required:
+## CNN Concepts Demonstrated
 
-- TensorFlow
-- NumPy
-- Streamlit
-- Pillow
+* Convolution layers for feature extraction
+* ReLU activation function
+* Max pooling for spatial reduction
+* Fully connected (Dense) layers
+* Softmax output layer for classification
+* Adam optimizer
+* Categorical Cross-Entropy loss function
 
-Install all dependencies using:
-```
-pip install -r requirements.txt
-```
+## Model Training
+
+* The CNN model is trained for **10 epochs**
+* Training and validation accuracy and loss are recorded
+* The trained model is saved as **cifar10_cnn.h5**
+
+## Result Visualization
+
+The following plots are generated during training:
+
+* **accuracy.png** – Training vs Validation Accuracy
+* **loss.png** – Training vs Validation Loss
+
+These visualizations help in analyzing model performance.
+
+## User Interface
+
+A simple **Streamlit-based web interface** is included:
+
+* Users can upload an image
+* The model predicts and displays the image class
+* Provides an interactive experience for testing the CNN
 
 ## How to Run the Project
 
-### Step 1: Train the Model
-Run the following command to train the CNN:
+### Step 1: Install dependencies
+
+```bash
+pip install -r requirements.txt
 ```
+
+### Step 2: Train the model
+
+```bash
 python train.py
 ```
-This will train the model and save it as `cifar10_cnn.h5`.
 
-### Step 2: Evaluate the Model
-Evaluate the trained model using:
-```
+### Step 3: Evaluate the model
+
+```bash
 python evaluate.py
 ```
-This will display the accuracy and performance metrics of the model.
 
-### Step 3: Run the Streamlit Application
-Launch the user interface using:
-```
+### Step 4: Run the Streamlit application
+
+```bash
 streamlit run app.py
 ```
-Upload an image and view the predicted CIFAR-10 class.
 
-## Output
-- The trained CNN model accurately classifies CIFAR-10 images.
-- The Streamlit app provides an interactive interface for image upload and prediction.
+## Deliverables
+
+* Python source code
+* Trained CNN model
+* Performance visualizations
+* GitHub repository with documentation
 
 ## Conclusion
-This project demonstrates the complete workflow of a CNN-based image classification system, including data preprocessing, model training, evaluation, and deployment through a web interface.
+
+This project successfully implements a CNN-based image classification system using CIFAR-10. It clearly demonstrates core CNN concepts such as convolution, pooling, activation functions, optimization, and evaluation. The project also includes visual outputs and a user interface, making it suitable for academic submission.
+
+## Author
+
+**Diya Mathew**
