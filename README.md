@@ -85,9 +85,5 @@ Upload an image and view the predicted CIFAR-10 class.
 - The trained CNN model accurately classifies CIFAR-10 images.
 - The Streamlit app provides an interactive interface for image upload and prediction.
 
-## Result Visualizations
-- Training and validation accuracy graph
-- Training and validation loss graph
-
 ## Conclusion
 This project demonstrates the complete workflow of a CNN-based image classification system, including data preprocessing, model training, evaluation, and deployment through a web interface.
